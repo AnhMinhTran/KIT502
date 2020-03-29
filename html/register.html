@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="../css/main.css"/>
+
+  <title>Register</title>
+</head>
+
+<body>
+<!--Div to center the form-->
+<div class="form">
+  <div class="tab">
+    <button class="tablink" onclick="openStudent(event,'Student')">Student</button>
+    <button class="tablink" onclick="openStudent(event,'Staff')">Staff</button>
+  </div>
+  <!--  Student register form-->
+  <div id="Student" class="tabcontent">
+    <h2>Student Registration</h2>
+    <form>
+      <label for="SID"> Student ID:</label>
+      <input class="form-control" type="number" id="SID" name="SID"> <br>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="Fname"> Firstname:</label>
+          <input type="text" class="form-control" id="Fname" name="Fname"> <br>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="Lname"> Lastname:</label>
+          <input type="text" class="form-control" id="Lname" name="Lname"> <br>
+        </div>
+      </div>
+      <label for="address"> Address:</label>
+      <input type="text" class="form-control" id="address" name="address"><br>
+      <label for="email"> Email:</label>
+      <input type="email" class="form-control" id="email" name="email"> <br>
+      <label for="psw"> Password:</label>
+      <input type="password" class="form-control" id="psw" name="psw"> <br>
+      <label for="dob"> Date Of Birth:</label>
+      <input type="date" class="form-control" id="dob" name="dob"> <br>
+      <label for="phone"> Phone Number:</label>
+      <input type="tel" class="form-control" id="phone" name="phone"><br>
+      <input type="submit" class="btn btn-primary form-control" value="Submit"> <br>
+    </form>
+    <span>Already have an account? <a href="login.html">Log in</a> </span>
+  </div>
+  <!--  Staff register form-->
+  <div id="Staff" class="tabcontent">
+    <h2>Staff Registration</h2>
+    <form>
+      <label for="StID"> Staff ID:</label>
+      <input type="number" class="form-control" id="StID" name="StID"> <br>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="FnameS"> Firstname:</label>
+          <input type="text" class="form-control" id="FnameS" name="FnameS"> <br>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="LnameS"> Lastname:</label>
+          <input type="text" class="form-control" id="LnameS" name="LnameS"> <br>
+        </div>
+      </div>
+      <label for="emailS"> Email:</label>
+      <input type="email" class="form-control" id="emailS" name="emailS"> <br>
+      <label for="pswS"> Password:</label> <br>
+      <input type="password" class="form-control" id="pswS" name="pswS"> <br>
+      <label for="qual">Qualifications: </label>
+      <input type="text" class="form-control" id="qual" name="qual"> <br>
+      <label for="exp">Expertise: </label>
+      <input type="text" class="form-control" id="exp" name="exp"><br>
+      <label for="phoneS"> Phone Number:</label>
+      <input type="tel" class="form-control" id="phoneS" name="phoneS"><br>
+      <input type="submit" class="btn btn-primary form-control" value="Submit"> <br>
+    </form>
+    <span>Already have an account? <a href="login.html">Log in</a> </span>
+  </div>
+</div>
+<script>
+    function openStudent(event, user) {
+        var i, tabcontent, tablink;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablink = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablink.length; i++) {
+            tablink[i].className = tablink[i].className.replace("active", "");
+        }
+        document.getElementById(user).style.display = "block";
+        event.currentTarget.className += "active";
+    }
+</script>
+</body>
+</html>
