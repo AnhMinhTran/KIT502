@@ -10,7 +10,7 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
   <link rel="stylesheet" type="text/css" href="../css/main.css"/>
-
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <title>Register</title>
 </head>
 
@@ -18,31 +18,33 @@
 <!--Div to center the form-->
 <div class="form">
   <div class="tab">
-    <button class="tablink" onclick="openStudent(event,'Student')">Student</button>
-    <button class="tablink" onclick="openStudent(event,'Staff')">Staff</button>
+    <button id="stuTab" class="tablink">Student</button>
+    <button id="staTab" class="tablink">Staff</button>
   </div>
   <!--  Student register form-->
   <div id="Student" class="tabcontent">
     <h2>Student Registration</h2>
-    <form>
+    <form id="StuReg">
       <label for="SID"> Student ID:</label>
-      <input class="form-control" type="number" id="SID" name="SID"> <br>
+      <input class="form-control" type="number" id="SID" name="SID" required> <br>
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="Fname"> Firstname:</label>
-          <input type="text" class="form-control" id="Fname" name="Fname"> <br>
+          <input type="text" class="form-control" id="Fname" name="Fname" required> <br>
         </div>
         <div class="form-group col-md-6">
           <label for="Lname"> Lastname:</label>
-          <input type="text" class="form-control" id="Lname" name="Lname"> <br>
+          <input type="text" class="form-control" id="Lname" name="Lname" required> <br>
         </div>
       </div>
       <label for="address"> Address:</label>
       <input type="text" class="form-control" id="address" name="address"><br>
       <label for="email"> Email:</label>
-      <input type="email" class="form-control" id="email" name="email"> <br>
+      <input type="email" class="form-control" id="email" name="email" required> <br>
       <label for="psw"> Password:</label>
-      <input type="password" class="form-control" id="psw" name="psw"> <br>
+      <input type="password" class="form-control" id="psw" name="psw" required> <br>
+      <label for="pswcf"> Password confirm:</label>
+      <input type="password" class="form-control" id="pswcf" name="pswcf" required> <br>
       <label for="dob"> Date Of Birth:</label>
       <input type="date" class="form-control" id="dob" name="dob"> <br>
       <label for="phone"> Phone Number:</label>
@@ -54,23 +56,25 @@
   <!--  Staff register form-->
   <div id="Staff" class="tabcontent">
     <h2>Staff Registration</h2>
-    <form>
+    <form id="StaReg">
       <label for="StID"> Staff ID:</label>
-      <input type="number" class="form-control" id="StID" name="StID"> <br>
+      <input type="number" class="form-control" id="StID" name="StID" required> <br>
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="FnameS"> Firstname:</label>
-          <input type="text" class="form-control" id="FnameS" name="FnameS"> <br>
+          <input type="text" class="form-control" id="FnameS" name="FnameS" required> <br>
         </div>
         <div class="form-group col-md-6">
           <label for="LnameS"> Lastname:</label>
-          <input type="text" class="form-control" id="LnameS" name="LnameS"> <br>
+          <input type="text" class="form-control" id="LnameS" name="LnameS" required> <br>
         </div>
       </div>
       <label for="emailS"> Email:</label>
-      <input type="email" class="form-control" id="emailS" name="emailS"> <br>
+      <input type="email" class="form-control" id="emailS" name="emailS" required> <br>
       <label for="pswS"> Password:</label> <br>
-      <input type="password" class="form-control" id="pswS" name="pswS"> <br>
+      <input type="password" class="form-control" id="pswS" name="pswS" required> <br>
+      <label for="pswSCf"> Password Confirm:</label> <br>
+      <input type="password" class="form-control" id="pswSCf" name="pswSCf" required> <br>
       <label for="qual">Qualifications: </label>
       <input type="text" class="form-control" id="qual" name="qual"> <br>
       <label for="exp">Expertise: </label>
@@ -82,20 +86,6 @@
     <span>Already have an account? <a href="login.html">Log in</a> </span>
   </div>
 </div>
-<script>
-    function openStudent(event, user) {
-        var i, tabcontent, tablink;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        tablink = document.getElementsByClassName("tablink");
-        for (i = 0; i < tablink.length; i++) {
-            tablink[i].className = tablink[i].className.replace("active", "");
-        }
-        document.getElementById(user).style.display = "block";
-        event.currentTarget.className += "active";
-    }
-</script>
+<script type="text/javascript" src="../js/register.js"></script>
 </body>
 </html>
