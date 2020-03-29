@@ -1,9 +1,10 @@
 // Making sure DOM is ready to be manipulated
 $(document).ready(function () {
-  var stuTab = document.getElementById("stuTab");
-  var staTab = document.getElementById("staTab");
-  var pwdRegex = /^(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^])([a-zA-Z0-9]{6,12})+$/;
-  var IDRegex = /^([0-9])+$/;
+  // Declare variable
+  let stuTab = document.getElementById("stuTab");
+  let staTab = document.getElementById("staTab");
+  let pwdRegex = /^(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^])([a-zA-Z0-9]{6,12})+$/;
+  let IDRegex = /^([0-9])+$/;
 
   stuTab.addEventListener("click", function () {
     switchTab(event, "Student")
@@ -11,7 +12,7 @@ $(document).ready(function () {
   staTab.addEventListener("click", function () {
     switchTab(event, "Staff");
   });
-
+// Validation for student regisration
   $("#StuReg").submit(function (e) {
     e.preventDefault();
     let SID = $("#SID").val();
@@ -31,7 +32,7 @@ $(document).ready(function () {
       alert("Registered Successfully");
 
   });
-
+// Validation for staff regisration
   $("#StaReg").submit(function (e) {
     e.preventDefault();
     let stID = $("#StID").val();
